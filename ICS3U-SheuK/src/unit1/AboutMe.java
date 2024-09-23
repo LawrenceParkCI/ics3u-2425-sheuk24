@@ -13,6 +13,8 @@ public class AboutMe {
 		System.out.println("Grade - 11");
 		System.out.println("Teacher - Ms.Kemp");
 		System.out.println("School - Lawrence Park Collegiate Institute");
+		System.out.println("Let's go \"Panthers\"");
+		System.out.println();
 	}
 
 }
