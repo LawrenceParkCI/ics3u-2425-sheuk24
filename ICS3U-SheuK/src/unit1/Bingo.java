@@ -14,7 +14,7 @@ public class Bingo {
 		System.out.println("\n5. Steps 1 to 4 are epreated until a player matches the bingo pattern.");
 		System.out.println("\n6. The winning player yells BINGO.");
 		// Bingo template
-		System.out.println("Sample Bingo Card");
+		System.out.println("\nSample Bingo Card");
 		System.out.format("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.format("\n_______________________________");
 		System.out.format("\n%-6s%-6s%-6s%-6s%-6s%-6s","|B","|I","|N","|G","|O","|");
