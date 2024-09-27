@@ -1,7 +1,14 @@
 package unit1;
-
+/**
+ * Description: This program prints the rules of Bingo plus a sample card.
+ * Date: Septemebr 27, 2024
+ * @author Kate Sheu
+ */
 public class Bingo {
-
+/**
+ * Entry point to the program
+ * @param args
+ */
 
 	public static void main(String[] args) {
 		// Bingo Rules

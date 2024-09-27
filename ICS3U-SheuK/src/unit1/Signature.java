@@ -1,7 +1,14 @@
 package unit1;
-
+/**
+ * Description: This program prints a signature of my name and a photo that represents me.
+ * Date: September 27, 2024
+ * @author Kate Sheu
+ */
 public class Signature {
-
+/**
+ * Entry point to the program.
+ * @param args
+ */
 	public static void main(String[] args) {
 		// Signature
 		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");

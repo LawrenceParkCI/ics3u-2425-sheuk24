@@ -5,7 +5,10 @@ package unit1;
  * @author Kate Sheu
  */
 public class AboutMe {
-
+/**
+ * Entry point to the program.
+ * @param args
+ */
 	public static void main(String[] args) {
 		System.out.println("About Me:");
 		System.out.println("-----------");
