@@ -10,7 +10,7 @@ public class Signature {
  * @param args
  */
 	public static void main(String[] args) {
-		// Signature
+		// This is my ASCII Signature
 		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
 		System.out.println("|   _  __      _       _____  U _____ u      ____     _   _  U _____ u   _   _      |");
 		System.out.println("|  |\"|/ /  U  /\"\\  u  |_ \" _| \\| ___\"|/     / __\"| u |'| |'| \\| ___\"|/U |\"|u| |     |");
@@ -20,7 +20,7 @@ public class Signature {
 		System.out.println("|,-,>> \\\\,-.\\\\    >>  _// \\\\_  <<   >>       )(  (__)//   \\\\  <<   >> (__) )(       |");
 		System.out.println("| \\.)   (_/(__)  (__)(__) (__)(__) (__)     (__)    (_\") (\"_)(__) (__)    (__)      | ");
 		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");		
-		// Photo
+		// This is my ASCII Photo
 		System.out.println("         ___..._");
 	    System.out.println("     _,--'       \"`-.");
 	    System.out.println("  ,'.  .            \\");

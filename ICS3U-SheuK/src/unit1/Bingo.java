@@ -11,7 +11,7 @@ public class Bingo {
  */
 
 	public static void main(String[] args) {
-		// Bingo Rules
+		// The next eight lines are the Bingo rules.
 		System.out.println("Bingo Rules");
 		System.out.println("--------------------------------------------");
 		System.out.println("\n1. The caller randomly pulls a numbered bingo ball.");
@@ -20,7 +20,7 @@ public class Bingo {
 		System.out.println("\n4. If the number is located, it is marked off.");
 		System.out.println("\n5. Steps 1 to 4 are epreated until a player matches the bingo pattern.");
 		System.out.println("\n6. The winning player yells BINGO.");
-		// Bingo template
+		//This is the Bingo template.
 		System.out.println("\nSample Bingo Card");
 		System.out.format("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.format("\n_______________________________");

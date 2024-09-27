@@ -10,12 +10,14 @@ public class AboutMe {
  * @param args
  */
 	public static void main(String[] args) {
+		//The next 6 lines are about me.
 		System.out.println("About Me:");
 		System.out.println("-----------");
 		System.out.println("Name - Kate Sheu");
 		System.out.println("Grade - 11");
 		System.out.println("Teacher - Ms.Kemp");
 		System.out.println("School - Lawrence Park Collegiate Institute");
+		//This is a school cheer
 		System.out.println("Let's go \"Panthers\"");
 		//this is my school schedule for the week
 		System.out.format("Timetable for the week of September 23");
