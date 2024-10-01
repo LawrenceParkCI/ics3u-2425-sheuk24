@@ -1,6 +1,6 @@
 package unit1;
 /**
- 	*Description: 
+ 	*Description: This program is a worksheet of creating variables.
  	*Date: September 30, 2024
  	*@author Kate Sheu 	
  */
@@ -16,6 +16,7 @@ public class CreatingVariables {
 		// Warmup: print the calculation for the area of a square with side length 25
 		// A = 25 x 25 = 625
 		// Key Question: what if the value I want to use needs to change?
+		// You can create a variable for the value that needs to be changed, and then you can assign it a new value.
 		/*
 		 * Variables
 		 * A variable is a place in memory that you can tell your computer to set aside when you make a program.
@@ -27,6 +28,7 @@ public class CreatingVariables {
 
 		System.out.println("Part 1");
 		//what do you notice is being printed out?
+		//"Part 1" is being printed out.
 		int myNum;
 		myNum = 10;
 		System.out.print("myNum = ");
@@ -66,6 +68,7 @@ public class CreatingVariables {
 		myAge = 25;
 
 		//Print it out in a new sentence (Hint: remember how we combined text and numbers in a print statement)
+		System.out.println("My age is now" + myAge);
 
 
 
