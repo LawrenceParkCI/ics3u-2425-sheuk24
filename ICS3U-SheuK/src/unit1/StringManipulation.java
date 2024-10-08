@@ -33,6 +33,15 @@ public class StringManipulation {
 		System.out.println("\nHere is the character at index 5 of your sentence!");
 		System.out.println(sentence.charAt(5));
 		
+		//Bonus
+		int firstWord = sentence.indexOf(" ");
+		System.out.println("\nHere is the first word of your sentence!");
+		System.out.println(sentence.substring(0,firstWord));
+		
+		int lastWord = sentence.lastIndexOf(" ");
+		System.out.println("\nHere is the last word of your sentence!");
+		System.out.println(sentence.substring(lastWord));
+		
 		sc.close();
 
 	}
