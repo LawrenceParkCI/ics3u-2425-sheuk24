@@ -1,7 +1,7 @@
 package unit1;
 
 /**
- * Description: 
+ * Description: This program prints the Casting worksheet
  * Date: Oct 10, 2024
  * @author Kate Sheu
  */ 
@@ -35,32 +35,36 @@ public class Casting {
 
     //What type of data is printed here? Why?
     System.out.println(doubleNum);
-    //A double number is being printed.
+    //A double number is being printed because the int was implicitly casted to a double.
 
     //can you explain what is happening in this code?
     doubleNum = doubleNum + 2.2;
-    //A double number + 2.2 is being printed
+    //A double number is increased by 2.2 and is being printed
 
     //explicit casting
     intNum = (int) doubleNum;
 
     //What type of data is printed here? Why?
     System.out.println(intNum);
-    //An integer is being printed.
+    //An integer is being printed because doubleNum was explicitly casted to int
     /*
     Demonstrate casting between each of the data type. Write down whether it is explicit or implicit
-      int to double: explicit
-      intNum = (int) doubleNum;
-      
-      double to int: inplicit
+      int to double: implicit
       doubleNum = intNum;
       
-      int to long: 
-      long to int:
+      double to int: explicit
+      intNum = (int) doubleNum;
+      
+      int to long: implicit 
+      longNum = intNum;
+      
+      long to int: explicit
+      intNum = (int) longNum;
 
     Why do you think these are implicit/explicit? (Hint: Think about the size of each data and the type of data)
     */
-    //Double is longer than an int, so switching from double --> int is implicit because there is no need to add extra code.
+    //Implicit casting is when the type of data can hold all the information from the original data type (e.g. int --> long)
+    //Explicit casting is when the type of data cannot hold all the information from the original data type (e.g. double --> int)
     
     
 
@@ -72,8 +76,14 @@ public class Casting {
     Scanner in = new Scanner(System.in);
     System.out.println("Give me decimal number up to the hundredth");
     
+    myNum = in.nextDouble();
+    myNum = (int)(myNum*10)/10.0;
+    System.out.print("Rounding down to the nearest tenth, it is: " + myNum);
+    
+    in.close();
+    
+  
 
-    System.out.print("Rounding down to the nearest tenth, it is: ");
     
   }
 }
