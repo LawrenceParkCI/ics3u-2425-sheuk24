@@ -50,16 +50,16 @@ public class Casting {
     /*
     Demonstrate casting between each of the data type. Write down whether it is explicit or implicit
       int to double: implicit
-      doubleNum = intNum;
+      double doubleNum = intNum;
       
       double to int: explicit
-      intNum = (int) doubleNum;
+      int intNum = (int) doubleNum;
       
       int to long: implicit 
-      longNum = intNum;
+      long longNum = intNum;
       
       long to int: explicit
-      intNum = (int) longNum;
+      int intNum = (int) longNum;
 
     Why do you think these are implicit/explicit? (Hint: Think about the size of each data and the type of data)
     */
