@@ -1,7 +1,7 @@
 package unit1;
 
 /**
-* Description: This program prints the Commenting wokrsheet
+* Description: This program prints the Commenting worksheet
 * Date: October 15, 2024
 * @author Kate Sheu
 */
@@ -46,44 +46,45 @@ public class Commenting {
     */
 
 
-    int num1 = 20;
-    double num2 = 36.2;
-    String stringNum = "";
+    int num1 = 20; //The current value of num1 is 20
+    double num2 = 36.2; //The current value of num2 is 36.2
+    String stringNum = "";//stringNum and no value currently
 
     /*
     * Variables Name    |   Value
     * ---------------------------------
-    * num1              |
-    * num2              |
+    * num1              | 20
+    * num2              | 36.2
     * stringNum         |
     */
 
-    num1 += 20;
-    num1 = num1 / 3 * 2;
-    num1 = (int)(num2 * 3 - (2 + 5) * 8);
-    num2 = ((int)num2) - num1;
-    stringNum = num1 + " " + num2;
-
+    num1 += 20; //The current value of num1 40
+    num1 = num1 / 3 * 2; //The current value of num1 is 26
+    num1 = (int)(num2 * 3 - (2 + 5) * 8);//The current value of num1 is 52
+    num2 = ((int)num2) - num1;//The current value of num2 is -16.0
+    stringNum = num1 + " " + num2;//The current value of stringNum is 52 -16.0
+  
+   
     /*
     * Variables Name    |   Value
     * ---------------------------------
-    * num1              |
-    * num2              |
-    * stringNum         |
+    * num1              |52
+    * num2              |-16.0
+    * stringNum         |52 -16.0
     */
 
-    num2 /= 2.5;
-    num1 /= 2;
-    stringNum = stringNum + "; ";
-    stringNum = stringNum + num1 + " " + num2;
-
+    num2 /= 2.5; //The value is now -6.4
+    num1 /= 2; //The value is currently 26
+    stringNum = stringNum + "; "; //The value is currently 52 -16.0;
+    stringNum = stringNum + num1 + " " + num2; //The value is currently 52 -16.0; 26 -6.4
+ 
 
     /*
     * Variables Name    |   Value
     * ---------------------------------
-    * num1              |
-    * num2              |
-    * stringNum         |
+    * num1              |26
+    * num2              |-6.4
+    * stringNum         |52 -16.0; 26 -6.4
     */
   }
 }
