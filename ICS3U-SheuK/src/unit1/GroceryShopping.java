@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Description
+ * Description: This program allows users to input their grocery order and prints a receipt to go with it.
  * Date: October 18, 2024
  * @author Kate Sheu
  */
@@ -20,18 +20,33 @@ public class GroceryShopping {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		System.out.println("|| $$$ \\\\\\ ========== \"Ms. Sheu's Grocery\" ========== /// $$$ ||");
+		//Printing logo
+				System.out.printf("\n%-62s%-2s","||", "||");
+				System.out.printf("\n||             ⠈⠛⠻⠶⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+				System.out.printf("\n||              ⠀⠀⠀⠀ ⠈⢻⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀  ⠀  ");
+				System.out.printf("\n||              ⠀⠀⠀⠀⠀⠀⠀⢻⡏⠉⠉⠉⠉⢹⡏⠉⠉⠉⠉⣿⠉⠉⠉⠉⠉⣹⠇⠀⠀⠀  ");
+				System.out.printf("\n||           ⠀   ⠀⠀⠀⠀⠀⠀⠈⣿⣀⣀⣀⣀⣸⣧⣀⣀⣀⣀⣿⣄⣀⣀⣀⣠⡿⠀⠀⠀⠀");
+				System.out.printf("\n||           ⠀⠀   ⠀⠀⠀⠀⠀⠀⠸⣧⠀⠀⠀⢸⡇⠀⠀⠀⠀⣿⠁⠀⠀⠀⣿⠃⠀⠀⠀");
+				System.out.printf("\n||           ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢹⣧⣤⣤⣼⣧⣤⣤⣤⣤⣿⣤⣤⣤⣼⡏⠀⠀⠀⠀⠀");
+				System.out.printf("\n||           ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀⢿⠀⠀⢸⡇⠀⠀⠀⠀⣿⠀⠀⢠⡿⠀⠀⠀⠀⠀⠀");
+				System.out.printf("\n||           ⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢸⣷⠤⠼⠷⠤⠤⠤⠤⠿⠦⠤⠾⠃⠀⠀⠀⠀⠀⠀");
+				System.out.printf("\n||            ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+				System.out.printf("\n||            ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢾⣷⢶⣶⠶⠶⠶⠶⠶⠶⣶⠶⣶⡶⠀⠀⠀");
+				System.out.printf("\n||            ⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠸⣧⣠⡿⠀⠀⠀⠀⠀⠀⢷⣄⣼⠇⠀⠀⠀⠀⠀⠀⠀");
+				
 		
-		//declaring variables
+		//Declaring variables.
 		String item1, item2;
 		double cost1, cost2;
 		int quantity1, quantity2;
+		final double taxRate = 0.13;
 		
-		//Formating
+		//Formating.
 		DecimalFormat money = new DecimalFormat ("0.00");
 		
-		//getting user input for item 1
+		//Getting user input for item 1.
 		System.out.println("\nWelcome to Ms. Sheu's Grocery! Please press ENTER after answering each question!");
-		System.out.print("What would you like to buy? ");
+		System.out.print("\nWhat would you like to buy? ");
 		item1 = sc.nextLine();
 		System.out.print("Sounds great! How much does it cost? $");
 		cost1 = sc.nextDouble();
@@ -39,7 +54,7 @@ public class GroceryShopping {
 		quantity1 = sc.nextInt();
 		sc.nextLine();
 		
-		//getting user input for item 2
+		//Getting user input for item 2.
 		System.out.print("\nWhat is the second item you would like to buy? ");
 		item2 = sc.nextLine();
 		System.out.print("Amazing! How much does it cost? $");
@@ -48,20 +63,20 @@ public class GroceryShopping {
 		quantity2 = sc.nextInt();
 		System.out.println("Sounds delicious!");
 		
-		//Getting Date and Time
+		//Getting Date and Time.
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yy HH:mm");
 		String formattedDateTime = now.format(formatter);
 		
-		//Calculations for Subtotal
+		//Calculations.
 		double totalCost1 =  cost1*quantity1;
 		double totalCost2 = cost2*quantity2;
 		
-		//Calculating Tax 
-		final double taxRate = 0.13;
 		
-		//printing receipt
+		
+		//Printing receipt
 		System.out.println("\nHere is your receipt:\n");
+		
 		
 		//Formatting Title
 		String title = "Ms. Sheu's Grocery";
@@ -69,13 +84,18 @@ public class GroceryShopping {
 		int padding = (totalWidth - title.length())/2;
 		String centeredTitle = String.format("%" + padding + "s%s%" + padding + "s", "", title, "");
 		System.out.println(centeredTitle);
+		System.out.println("...........................................");
+
+
 		
+		//Printing output
 		System.out.println(formattedDateTime);
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
+		System.out.println("|-----------------------------------------|");
 		System.out.printf("%-10s%-10s%-10s%-10s%-10s", "|Item", "|Price", "|Quant.","|Total Price", "|");
 		System.out.println("\n|-----------------------------------------|");
-		System.out.printf("%-1s%-9s%-3s%-7s%-1s%-9s%-3s%-9s%-1s", "|", item1, "| $", cost1, "|", quantity1, "| $", cost1* quantity1, "|");
-		System.out.printf("\n%-1s%-9s%-3s%-7s%-1s%-9s%-3s%-9s%-1s", "|", item2, "| $", cost2, "|", quantity2, "| $", cost2* quantity2, "|");
+		System.out.printf("%-1s%-9s%-3s%-7s%-1s%-9s%-3s%-9s%-1s", "|", item1, "| $", cost1, "|", quantity1, "| $", money.format(totalCost1), "|");
+		System.out.printf("\n%-1s%-9s%-3s%-7s%-1s%-9s%-3s%-9s%-1s", "|", item2, "| $", cost2, "|", quantity2, "| $", money.format(totalCost2), "|");
 		System.out.println("\n|-----------------------------------------|");
 		
 		double subTotal = totalCost1 + totalCost2;
@@ -87,7 +107,17 @@ public class GroceryShopping {
 		double total = subTotal + taxPrice;
 		System.out.printf("\n%-1s%31s%10s%1s","|", "Tax: $", money.format(total), "|");
 		System.out.println("\n|-----------------------------------------|");
-		System.out.println("Thankyou for shopping have a gr");
+		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
+		System.out.println("\nThis is approximately $" + Math.round(total) + ".");
+		
+		//Challenge #1
+		System.out.println("The total rounded to the nearest dollar is: $" + money.format(Math.round(total)));
+		
+		//Challenge #2
+		total = (Math.round(total*20)/20.00);
+		System.out.println("The total rounded to the nearest 5 cents is: $" + money.format(total));
+		
+		System.out.println("\nThank you for shopping at Ms. Sheu's Grocery!\nHave a great day!");
 		sc.close();
 		
 
