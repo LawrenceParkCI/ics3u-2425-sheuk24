@@ -77,17 +77,8 @@ public class GroceryShopping {
 		System.out.println("\nHere is your receipt:\n");
 		
 		
-		//Formatting Title
-		String title = "Ms. Sheu's Grocery";
-		int totalWidth = 40;
-		int padding = (totalWidth - title.length())/2;
-		String centeredTitle = String.format("%" + padding + "s%s%" + padding + "s", "", title, "");
-		System.out.println(centeredTitle);
-		System.out.println("...........................................");
-
-
-		
 		//Printing output
+		System.out.println(" ••••••••••• Ms. Sheu's Grocery •••••••••••");
 		System.out.println(formattedDateTime);
 		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
 		System.out.println("|-----------------------------------------|");
