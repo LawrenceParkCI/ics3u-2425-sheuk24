@@ -21,18 +21,17 @@ public class GroceryShopping {
 		Scanner sc = new Scanner (System.in);
 		System.out.println("|| $$$ \\\\\\ ========== \"Ms. Sheu's Grocery\" ========== /// $$$ ||");
 		//Printing logo
-				System.out.printf("\n%-62s%-2s","||", "||");
-				System.out.printf("\n||             ⠈⠛⠻⠶⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
-				System.out.printf("\n||              ⠀⠀⠀⠀ ⠈⢻⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀  ⠀  ");
-				System.out.printf("\n||              ⠀⠀⠀⠀⠀⠀⠀⢻⡏⠉⠉⠉⠉⢹⡏⠉⠉⠉⠉⣿⠉⠉⠉⠉⠉⣹⠇⠀⠀⠀  ");
-				System.out.printf("\n||           ⠀   ⠀⠀⠀⠀⠀⠀⠈⣿⣀⣀⣀⣀⣸⣧⣀⣀⣀⣀⣿⣄⣀⣀⣀⣠⡿⠀⠀⠀⠀");
-				System.out.printf("\n||           ⠀⠀   ⠀⠀⠀⠀⠀⠀⠸⣧⠀⠀⠀⢸⡇⠀⠀⠀⠀⣿⠁⠀⠀⠀⣿⠃⠀⠀⠀");
-				System.out.printf("\n||           ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢹⣧⣤⣤⣼⣧⣤⣤⣤⣤⣿⣤⣤⣤⣼⡏⠀⠀⠀⠀⠀");
-				System.out.printf("\n||           ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀⢿⠀⠀⢸⡇⠀⠀⠀⠀⣿⠀⠀⢠⡿⠀⠀⠀⠀⠀⠀");
-				System.out.printf("\n||           ⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢸⣷⠤⠼⠷⠤⠤⠤⠤⠿⠦⠤⠾⠃⠀⠀⠀⠀⠀⠀");
-				System.out.printf("\n||            ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-				System.out.printf("\n||            ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢾⣷⢶⣶⠶⠶⠶⠶⠶⠶⣶⠶⣶⡶⠀⠀⠀");
-				System.out.printf("\n||            ⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠸⣧⣠⡿⠀⠀⠀⠀⠀⠀⢷⣄⣼⠇⠀⠀⠀⠀⠀⠀⠀");
+				System.out.println("\n             ⠈⠛⠻⠶⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+				System.out.println("              ⠀⠀⠀⠀ ⠈⢻⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀  ⠀  ");
+				System.out.println("              ⠀⠀⠀⠀⠀⠀⠀⢻⡏⠉⠉⠉⠉⢹⡏⠉⠉⠉⠉⣿⠉⠉⠉⠉⠉⣹⠇⠀⠀⠀  ");
+				System.out.println("           ⠀   ⠀⠀⠀⠀⠀⠀⠈⣿⣀⣀⣀⣀⣸⣧⣀⣀⣀⣀⣿⣄⣀⣀⣀⣠⡿⠀⠀⠀⠀");
+				System.out.println("           ⠀⠀   ⠀⠀⠀⠀⠀⠀⠸⣧⠀⠀⠀⢸⡇⠀⠀⠀⠀⣿⠁⠀⠀⠀⣿⠃⠀⠀⠀");
+				System.out.println("           ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢹⣧⣤⣤⣼⣧⣤⣤⣤⣤⣿⣤⣤⣤⣼⡏⠀⠀⠀⠀⠀");
+				System.out.println("           ⠀⠀⠀   ⠀⠀⠀ ⠀⠀⠀⠀⢿⠀⠀⢸⡇⠀⠀⠀⠀⣿⠀⠀⢠⡿⠀⠀⠀⠀⠀⠀");
+				System.out.println("          ⠀⠀⠀⠀   ⠀⠀⠀⠀⠀  ⠀⢸⣷⠤⠼⠷⠤⠤⠤⠤⠿⠦⠤⠾⠃⠀⠀⠀⠀⠀⠀");
+				System.out.println("            ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+				System.out.println("             ⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⢾⣷⢶⣶⠶⠶⠶⠶⠶⠶⣶⠶⣶⡶⠀⠀⠀");
+				System.out.println("            ⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠸⣧⣠⡿⠀⠀⠀⠀⠀⠀⢷⣄⣼⠇⠀⠀⠀⠀⠀⠀⠀");
 				
 		
 		//Declaring variables.
@@ -41,7 +40,7 @@ public class GroceryShopping {
 		int quantity1, quantity2;
 		final double taxRate = 0.13;
 		
-		//Formating.
+		//Formatting.
 		DecimalFormat money = new DecimalFormat ("0.00");
 		
 		//Getting user input for item 1.
@@ -105,7 +104,7 @@ public class GroceryShopping {
 		System.out.printf("\n%-1s%31s%10s%1s","|", "Tax: $", money.format(taxPrice), "|");
 		
 		double total = subTotal + taxPrice;
-		System.out.printf("\n%-1s%31s%10s%1s","|", "Tax: $", money.format(total), "|");
+		System.out.printf("\n%-1s%31s%10s%1s","|", "Total: $", money.format(total), "|");
 		System.out.println("\n|-----------------------------------------|");
 		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
 		System.out.println("\nThis is approximately $" + Math.round(total) + ".");
