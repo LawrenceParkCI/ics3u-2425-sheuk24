@@ -26,6 +26,10 @@ public class PositiveNegative {
 				if (num < 0) {
 					System.out.println("Your integer is a negative number.");
 				}
+				//If number is 0
+				if (num == 0) {
+					System.out.println("Your integer is neutral.");
+				}
 				// Testing if number is divisible by 7 
 				if (num%7 == 0) {
 					System.out.println("Your integer is divisible by 7.");
