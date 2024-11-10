@@ -8,9 +8,12 @@ import java.util.Scanner;
 */
 
 public class IfChallenge {
+/**
+ * Entry point into new program. 
+ * @param args
+ */
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
-
     /*
 
     (IF)
@@ -43,8 +46,22 @@ public class IfChallenge {
         System.out.println("You need to look on the bright side.");
       } if (favouriteNumber % 2 != 0) {
           System.out.println("That's a bit strange.");
-
       }
+    //IF and IF ELSE
 
+    if (favouriteNumber % 3 == 0 && favouriteNumber % 2 == 0) {
+        System.out.println("You should really consider thinking about 6.");
+      } else {
+          System.out.println("You can keep wholesome.");
+        }
+    //(IF, ELSE IF, ELSE)
+    int onesDigit = favouriteNumber % 10;
+    if (onesDigit == 8) {
+      System.out.println("I too am full.");
+    } else if (onesDigit == 9) {
+      System.out.println("Canada is a nice country.");
+    } else {
+      System.out.println("Don't count on it.");
+    }
   }
 }
