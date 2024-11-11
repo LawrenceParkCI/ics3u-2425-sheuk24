@@ -20,5 +20,8 @@ public class StringChallenge {
       -when you use the different String functions
       -when you are casting and how the value is changed
     */
+	  Scanner in = new Scanner(System.in);
+	  
+	  in.close();
   }
 }
