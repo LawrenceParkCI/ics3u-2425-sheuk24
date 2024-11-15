@@ -53,7 +53,7 @@ public class IfChallenge3 {
 	name = sc.nextLine();
 	System.out.println("\nWelcome to the Unit 3 Taxonomy quiz! Each question will be worth 1 point.\nPlease type in the letter as the answer.\nGood luck!");
 	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-	System.out.println("Let's go!");
+	System.out.println("Are you ready? Let's go!");
 	
 	
 	//Quiz questions
@@ -70,7 +70,7 @@ public class IfChallenge3 {
 	    }
 		
 	//Q2
-	System.out.println("\nQuestion 2. What species classification species concept refers to body shape, \nsize and other structural features?\n\ta) Biological\n\tb) Phylogenetic\n\tc) Morphological\ntd) Binomial");
+	System.out.println("\nQuestion 2. What species classification species concept refers to body shape, \nsize and other structural features?\n\ta) Biological\n\tb) Phylogenetic\n\tc) Morphological\n\td) Binomial");
 	System.out.print("Answer: ");
 	//Calculations
 	userAnswer2 = sc.nextLine();
@@ -82,20 +82,25 @@ public class IfChallenge3 {
 	    }
 		
 
-	//Q3
-	System.out.println("\nQuestion 3. What number in the hierarcy is the classification group GENUS?\n\ta) 4\n\tb) 7\n\tc) 2\n\td) None of the above");
-	System.out.print("Answer: ");
-	//Calculations
-	userAnswer3 = sc.nextLine();
-		if (userAnswer3 == correctAnswer3) {
-			System.out.println("You are correct!");
-			score++;
+		// Q3
+		System.out.println("\nQuestion 3. What number in the hierarcy is the classification group GENUS?\n\ta) 4\n\tb) 7\n\tc) 2\n\td) None of the above");
+		System.out.print("Answer: ");
+		// Calculations
+		userAnswer3 = sc.nextLine();
+		if (userAnswer3.equalsIgnoreCase(correctAnswer3)) {
+		    System.out.println("You are correct!");
+		    score++;
 		} else {
-			System.out.println("The correct answer is b) 7");
+		    System.out.println("The correct answer is b) 7");
 		}
 
 	//Total score
-	System.out.println("Great job! Your score is " + score +"/3!");
+	System.out.println("\nGreat job! Your score is " + score +"/3!");
+	//Finding percentage
+	int totalQuestions = 3; 
+	int percentage = (int) Math.round(((double) score / 3) * 100);
+
+	System.out.printf("That’s %d%%!", percentage);
 		sc.close();
   }
 }
