@@ -14,7 +14,7 @@ public class Randomness {
     
     int max = 1000;
     int min = 100;
-    int range = max - min +1;
+    int range = max - min + 1;
     
     for (int i = 0; i < 1; i++) {
         System.out.println((int)(Math.random() * range) + min);
