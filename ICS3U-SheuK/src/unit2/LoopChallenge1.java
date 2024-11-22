@@ -37,7 +37,6 @@ public class LoopChallenge1 {
          }
      } while (!userInput.equals(password)&&attempts < maxAttempts); 
 
-     // If the user didn't get the correct password within max attempts
      if (!userInput.equals(password)) {
          System.out.println("Too many failed attempts. Access denied.");
      }

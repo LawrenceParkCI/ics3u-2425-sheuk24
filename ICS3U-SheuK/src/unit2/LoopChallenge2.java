@@ -21,5 +21,16 @@ public class LoopChallenge2 {
       
       Use the loop that you didn't use in LoopChallenge1
     */
+	 
+	 int number;
+	 System.out.println("Please enter an integer:");
+	 Scanner sc = new Scanner(System.in);
+	 number = sc.nextInt();
+	 while (number <= 0) {
+	     System.out.print("You can't square root a negative number, please enter a different number");
+	 }
+	 System.out.println("The square root of your number is " + Math.sqrt(number));
+	 
+	 sc.close();
   }
 }
