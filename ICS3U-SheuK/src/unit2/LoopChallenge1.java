@@ -25,6 +25,7 @@ public class LoopChallenge1 {
 	 int attempts = 0;
 	 int maxAttempts = 3;
 	
+	 //Getting user input
 	 do {
          System.out.println("Please enter the password:");
          userInput = sc.nextLine();
@@ -35,6 +36,7 @@ public class LoopChallenge1 {
          } else {
              System.out.println("Incorrect password. Try again.");
          }
+         //Testing if user inputs more than 3 wrong answers
      } while (!userInput.equals(password)&&attempts < maxAttempts); 
 
      if (!userInput.equals(password)) {

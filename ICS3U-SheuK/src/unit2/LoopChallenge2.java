@@ -23,12 +23,14 @@ public class LoopChallenge2 {
     */
 	 
 	 int number;
+	 //Getting user input
 	 System.out.println("Please enter an integer:");
 	 Scanner sc = new Scanner(System.in);
 	 number = sc.nextInt();
 	 while (number <= 0) {
 	     System.out.print("You can't square root a negative number, please enter a different number");
 	 }
+	 //Printing square root of user integer
 	 System.out.println("The square root of your number is " + Math.sqrt(number));
 	 
 	 sc.close();
