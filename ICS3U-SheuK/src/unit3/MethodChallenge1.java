@@ -21,10 +21,10 @@ public class MethodChallenge1 {
 
  /**
  (Description)
- @param x1 ->
- @param y1 ->
- @param x2 ->
- @param y2 ->
+ @param x1 -> x-value of first coordinate 
+ @param y1 -> y-value of first coordinate 
+ @param x2 -> x-value of second coordinate
+ @param y2 -> y-value of second coordinate
  @return 
  */
    public static double distance( int x1, int y1, int x2, int y2 )
