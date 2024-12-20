@@ -1,5 +1,7 @@
 package unit3;
 
+import java.util.Scanner;
+
 /**
  * Description: This program includes different MathPlus methods. 
  * Date: December 17, 2024
@@ -84,7 +86,7 @@ public class MathPlus {
 	 * @param number The number to check
 	 * @return true if the number is prime, false otherwise
 	 */
-	static boolean isPrime (int number)
+	public static boolean isPrime (int number)
 	{
 		boolean isPrime = true;
 		if (number <= 1) 
@@ -96,6 +98,78 @@ public class MathPlus {
 				break;
 			}
 		return isPrime;
+
+	}
+
+	/**
+	 * Adds all the numbers in the array and returns the sum.
+	 * @param x The array of numbers to sum.
+	 * @return The total sum of the numbers.
+	 */
+	public static int sum (int [] x)
+	{
+		int sum = 0; 
+
+		// Looping through each index of the array
+		for (int i = 0; i < x.length; i++) {
+			sum += x[i]; 
+		}
+
+		return sum; 
+	}
+	/**
+	 * Adds all the numbers in the array and returns the sum.
+	 * @param y The array of numbers to sum.
+	 * @return The total sum of the numbers.
+	 */
+	public static double sum (double [] y)
+	{
+		double sum = 0.0; 
+
+		// Looping through each index of the array
+		for (int i = 0; i < y.length; i++) {
+			sum += y[i]; 
+		}
+
+		return sum; 
+
+	}
+	/**
+	 * Returns the index of where the smallest number in the array is located
+	 * @param x The array of numbers 
+	 * @return The index of the smallest number in the array
+	 */
+	public static int min (int [] x)
+	{
+		int min = 0;  
+
+		for (int i = 1; i < x.length; i++) {
+			if (x[i] < x[min]) {
+				min = i;
+			}
+
+			return min; 
+		}
+		return min;
+
+	}
+	/**
+	 * Returns the index of where the smallest number in the array is located
+	 * @param x The array of numbers 
+	 * @return The index of the smallest number in the array
+	 */
+	public static double min (double [] x)
+	{
+		double min = 0.0;  
+
+		for (int i = 1; i < x.length; i++) {
+			if (x[i] < x[(int) min]) {
+				min = i;  // Update min to the index of the smaller element
+			}
+		}
+
+		return min;
+
 
 	}
 }
