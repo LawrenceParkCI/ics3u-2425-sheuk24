@@ -10,32 +10,36 @@ package unit3;
 public class MathPlus {
 	/**
 	 * Entry point to new program
+	 * Demonstrates the use of MathPlus methods: distance, hypotenuse, numOfFactors, and isPrime
 	 * @param args
 	 */
 
 	public static void main(String[] args) {
-		//Distance
+		// Calculating the distance between points (3, 6) and (2, 8)
 		double distance = distance(3, 6, 2, 8 );
 		System.out.println(distance);
-		//Hypotenuse
+
+		// Calculating the hypotenuse of a triangle with sides 2 and 4
 		double hypotenuse = hypotenuse(2, 4);
 		System.out.println(hypotenuse);
-		//Number of Factors 
+
+		// Finding the number of factors of 24
 		int numOfFactors = numOfFactors(24);
 		System.out.println(numOfFactors);
-		//Prime
-		boolean isPrime = isPrime (19);
+
+		// Checking if 19 is a prime number
+		boolean isPrime = isPrime(19);
 		System.out.println(isPrime);
-		
+
 	}
 
 	/**
-		 This program return the distance between 2 points
-		 @param x1 -> x-value of first coordinate 
-		 @param y1 -> y-value of first coordinate 
-		 @param x2 -> x-value of second coordinate
-		 @param y2 -> y-value of second coordinate
-		 @return distance
+	 * Calculates the distance between two points.
+	 * @param x1 x-value of the first coordinate 
+	 * @param y1 y-value of the first coordinate 
+	 * @param x2 x-value of the second coordinate
+	 * @param y2 y-value of the second coordinate
+	 * @return distance between the two points
 	 */
 	public static double distance( int x1, int y1, int x2, int y2 )
 	{
@@ -45,11 +49,10 @@ public class MathPlus {
 	}
 
 	/**
-	 This program returns the hypotenuse of a triangle
-	 after a user inputs 2 values 
-	 @param x -> x-value of first side length 
-	 @param y -> y-value of second side length 
-	 @return hypotenuse
+	 * Calculates the hypotenuse of a right triangle given the lengths of two sides.
+	 * @param x Length of the first side
+	 * @param y Length of the second side
+	 * @return Length of the hypotenuse
 	 */
 
 	public static double hypotenuse( double x, double y )
@@ -60,28 +63,28 @@ public class MathPlus {
 	}
 
 	/**
-	 This program returns the number of factors of the given number 
-	 @param x -> value of given number 
-	 @return number of factors of given number
+	 * Calculates the number of factors of a given number.
+	 * @param x The number to calculate factors for
+	 * @return Number of factors of the given number
 	 */
 	public static int numOfFactors(int x)
 	{
-	    int numOfFactors = 0; 
-	    for (int i = 1; i <= x; i++) {
-	        if (x % i == 0) { 
-	            numOfFactors++; 
-	        }
-	    }
+		int numOfFactors = 0; 
+		for (int i = 1; i <= x; i++) {
+			if (x % i == 0) { 
+				numOfFactors++; 
+			}
+		}
 		return numOfFactors;
 
 	}
 
 	/**
-	 This program returns true if the number given is prime, false otherwise.
-	 @param x -> value of given number 
-	 @return true or false
+	 * Determines if a number is prime.
+	 * @param number The number to check
+	 * @return true if the number is prime, false otherwise
 	 */
-	public static boolean isPrime (int number)
+	static boolean isPrime (int number)
 	{
 		boolean isPrime = true;
 		if (number <= 1) 
