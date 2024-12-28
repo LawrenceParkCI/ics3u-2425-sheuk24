@@ -150,7 +150,6 @@ public class MathPlus {
 
 			return min; 
 		}
-		return min;
 
 	}
 	/**
@@ -158,13 +157,13 @@ public class MathPlus {
 	 * @param x The array of numbers 
 	 * @return The index of the smallest number in the array
 	 */
-	public static double min (double [] x)
+	public static int min (double [] x)
 	{
-		double min = 0.0;  
+		int min = 0.0;  
 
 		for (int i = 1; i < x.length; i++) {
 			if (x[i] < x[(int) min]) {
-				min = i;  // Update min to the index of the smaller element
+				min = i; 
 			}
 		}
 
@@ -172,4 +171,104 @@ public class MathPlus {
 
 
 	}
+	/**
+	 * Returns the index of where the largest number in the array is located
+	 * @param x The array of numbers 
+	 * @return The index of the largest number in the array
+	 */
+	public static int max (int [] x)
+	{
+		int max = 0;  
+
+		for (int i = 1; i < x.length; i++) { 
+			if (x[i] > x[max]) { 
+				max = i; 
+			}
+		}
+
+		return max;
+
+	}
+	/**
+	 * Returns the index of where the largest number in the array is located
+	 * @param x The array of numbers 
+	 * @return The index of the largest number in the array
+	 */
+	public static int max (double [] x)
+	{
+		int max = 0;  
+
+		for (int i = 1; i < x.length; i++) { 
+			if (x[(int) i] > x[(int) max]) { 
+				max = i; 
+			}
+		}
+
+		return max;
+
+	}
+	/**
+	 * Returns the difference between the largest and smallest numbers in the array
+	 * @param x The array of numbers 
+	 * @return The difference between 
+	 */
+	public static int bigDifference (int [] x)
+	{
+		int max = x[0];  
+		int min = x[0];  
+
+		for (int i = 1; i < x.length; i++) { 
+			if (x[i] > max) {
+				max = x[i]; 
+			}
+			if (x[i] < min) {
+				min = x[i]; 
+			}
+		}
+
+		int bigDifference = max - min;
+
+		return bigDifference; 
+
+	}
+	/**
+	 * Returns the difference between the largest and smallest numbers in the array
+	 * @param x The array of numbers 
+	 * @return The index of the largest number in the array
+	 */
+	public static int bigDifference (double [] x)
+	{
+		double max = x[0];  
+		double min = x[0];  
+
+		for (int i = 1; i < x.length; i++) { 
+			if (x[i] > max) {
+				max = x[i]; 
+			}
+			if (x[i] < min) {
+				min = x[i]; 
+			}
+
+		}
+
+		int bigDifference = (int) (max - min);
+
+		return bigDifference;
+
+	}
+	/**
+	 * Returns an array of all the factors of the given number
+	 * @param x The array of numbers 
+	 * @return The factors of x
+	 */
+	public static int factors (int [] x)
+	{
+		return 0;
+
+
+
+
+	}
+
 }
+
