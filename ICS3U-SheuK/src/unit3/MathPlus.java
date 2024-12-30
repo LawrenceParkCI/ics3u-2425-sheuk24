@@ -1,6 +1,7 @@
 package unit3;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Description: This program includes different MathPlus methods. 
@@ -67,6 +68,10 @@ public class MathPlus {
 		//Calculating the difference between the largest and smallest number in the array 
 		double bigDiffDouble = bigDifference(doubleArrayForMin);
 		System.out.println(bigDiffDouble);
+		
+		//Calculating the factors of 16
+		int[] result = factors(16);
+		System.out.println(Arrays.toString(result));
 
 	}
 
@@ -297,18 +302,19 @@ public class MathPlus {
 	 */
 	public static int [] factors (int x)
 	{
-		int numOfFactors = 0;  
-		for (int i = 1; i <= x; i++) {
-			if (x % i == 0) { 
-				numOfFactors++; 
-			}
-		}
-		return null;
-		
-	
-		
-
-	}
+		 ArrayList<Integer> factors = new ArrayList<>();
+	        for (int i = 1; i <= x; i++) {
+	            if (x % i == 0) {
+	                factors.add(i);
+	            }
+	        }
+	        
+	        int[] result = new int[factors.size()];
+	        for (int i = 0; i < factors.size(); i++) {
+	            result[i] = factors.get(i);
+	        }
+	        return result;
+	    }
 }
 
 
