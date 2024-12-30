@@ -18,7 +18,7 @@ public class MathPlus {
 
 	public static void main(String[] args) {
 		// Calculating the distance between points (3, 6) and (2, 8)
-		double distance = distance(3, 6, 2, 8 );
+		double distance = distance(3, 6, 2, 8);
 		System.out.println(distance);
 
 		// Calculating the hypotenuse of a triangle with sides 2 and 4
@@ -32,6 +32,41 @@ public class MathPlus {
 		// Checking if 19 is a prime number
 		boolean isPrime = isPrime(19);
 		System.out.println(isPrime);
+
+		//Calculating the sum of the array
+		int[] intArray = {1, 2, 3, 4, 5};
+		int intSum = sum(intArray);
+		System.out.println(intSum);
+
+		//Calculating the sum of the array
+		double[] doubleArray = {1.5, 2.5, 3.0};
+		double doubleSum = sum(doubleArray);
+		System.out.println(doubleSum);
+
+		//Calculating the index of the smallest number in the array
+		int minIndex = min(intArray);
+		System.out.println(minIndex);
+
+		//Calculating the index of the smallest number in the array
+		double[] doubleArrayForMin = {5.2, 1.1, 3.7};
+		int doubleMinIndex = min(doubleArrayForMin);
+		System.out.println(doubleMinIndex);
+
+		//Calculating the largest number in the array 
+		int maxIndex = max(intArray);
+		System.out.println(maxIndex);
+
+		//Calculating the largest number in the array 
+		int doubleMaxIndex = max(doubleArrayForMin);
+		System.out.println(doubleMaxIndex);
+
+		//Calculating the difference between the largest and smallest number in the array 
+		int bigDiff = bigDifference(intArray);
+		System.out.println(bigDiff);
+
+		//Calculating the difference between the largest and smallest number in the array 
+		double bigDiffDouble = bigDifference(doubleArrayForMin);
+		System.out.println(bigDiffDouble);
 
 	}
 
@@ -146,10 +181,9 @@ public class MathPlus {
 		for (int i = 1; i < x.length; i++) {
 			if (x[i] < x[min]) {
 				min = i;
-			}
-
-			return min; 
+			} 
 		}
+		return min;
 
 	}
 	/**
@@ -159,7 +193,7 @@ public class MathPlus {
 	 */
 	public static int min (double [] x)
 	{
-		int min = 0.0;  
+		int min = 0;  
 
 		for (int i = 1; i < x.length; i++) {
 			if (x[i] < x[(int) min]) {
@@ -261,14 +295,22 @@ public class MathPlus {
 	 * @param x The array of numbers 
 	 * @return The factors of x
 	 */
-	public static int factors (int [] x)
+	public static int [] factors (int x)
 	{
-		return 0;
-
-
-
+		int numOfFactors = 0;  
+		for (int i = 1; i <= x; i++) {
+			if (x % i == 0) { 
+				numOfFactors++; 
+			}
+		}
+		return null;
+		
+	
+		
 
 	}
-
 }
+
+
+
 
