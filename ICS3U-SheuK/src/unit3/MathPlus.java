@@ -68,10 +68,14 @@ public class MathPlus {
 		//Calculating the difference between the largest and smallest number in the array 
 		double bigDiffDouble = bigDifference(doubleArrayForMin);
 		System.out.println(bigDiffDouble);
-		
+
 		//Calculating the factors of 16
-		int[] result = factors(16);
-		System.out.println(Arrays.toString(result));
+		int[] factors = factors(16);
+		System.out.println(Arrays.toString(factors));
+		
+		//Calculating the mean of an array
+		double[] x = {3, 8.4, 9.6, 10.1};
+		System.out.println(mean(x));
 
 	}
 
@@ -302,19 +306,43 @@ public class MathPlus {
 	 */
 	public static int [] factors (int x)
 	{
-		 ArrayList<Integer> factors = new ArrayList<>();
-	        for (int i = 1; i <= x; i++) {
-	            if (x % i == 0) {
-	                factors.add(i);
-	            }
-	        }
-	        
-	        int[] result = new int[factors.size()];
-	        for (int i = 0; i < factors.size(); i++) {
-	            result[i] = factors.get(i);
-	        }
-	        return result;
+		//Calculating the number of factors the variable has 
+		int numOfFactors = 0;
+		for (int i = 1; i <= x; i++) {
+			if (x % i == 0) {
+				numOfFactors++;
+			}
+		}
+
+		//Creating array to store the variables 
+		int[] factors = new int[numOfFactors];
+		int index = 0;
+
+
+		for (int i = 1; i <= x; i++) {
+			if (x % i == 0) {
+				factors[index] = i;
+				index++;
+			}
+		}
+
+		return factors;
+	}
+	/**
+	 * Returns the average of all the numbers in the array
+	 * @param x The array of numbers 
+	 * @return The average of x
+	 */
+	public static double mean (double [] x)
+	{
+	    double sum = 0; 
+	    for (int i = 0; i < x.length; i++) {
+	        sum += x[i]; 
 	    }
+	    double mean = sum/x.length;
+
+		return mean;
+	}
 }
 
 
