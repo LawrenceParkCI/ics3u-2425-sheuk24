@@ -72,10 +72,18 @@ public class MathPlus {
 		//Calculating the factors of 16
 		int[] factors = factors(16);
 		System.out.println(Arrays.toString(factors));
-		
+
 		//Calculating the mean of an array
 		double[] x = {3, 8.4, 9.6, 10.1};
 		System.out.println(mean(x));
+
+		//Calculating the median of an array 
+		double[] y = {2,5.8,7,9,1.2,4,6.2};
+		System.out.println(median(y));
+
+		//Calculating the mode of an array 
+		double[] z = {2.7, 3.2, 7.8, 2.7, 7.8, 7.8, 1.5};
+		System.out.println(mode(z));
 
 	}
 
@@ -153,8 +161,6 @@ public class MathPlus {
 	public static int sum (int [] x)
 	{
 		int sum = 0; 
-
-		// Looping through each index of the array
 		for (int i = 0; i < x.length; i++) {
 			sum += x[i]; 
 		}
@@ -169,8 +175,6 @@ public class MathPlus {
 	public static double sum (double [] y)
 	{
 		double sum = 0.0; 
-
-		// Looping through each index of the array
 		for (int i = 0; i < y.length; i++) {
 			sum += y[i]; 
 		}
@@ -185,13 +189,14 @@ public class MathPlus {
 	 */
 	public static int min (int [] x)
 	{
-		int min = 0;  
+		int min = 0; 
 
 		for (int i = 1; i < x.length; i++) {
 			if (x[i] < x[min]) {
-				min = i;
-			} 
+				min = i; 
+			}
 		}
+
 		return min;
 
 	}
@@ -202,147 +207,202 @@ public class MathPlus {
 	 */
 	public static int min (double [] x)
 	{
-		int min = 0;  
+		 int min = 0; 
 
-		for (int i = 1; i < x.length; i++) {
-			if (x[i] < x[(int) min]) {
-				min = i; 
-			}
+		    for (int i = 1; i < x.length; i++) {
+		        if (x[i] < x[min]) {
+		            min = i; 
+		        }
+		    }
+
+		    return min;
+	}
+
+/**
+ * Returns the index of where the largest number in the array is located
+ * @param x The array of numbers 
+ * @return The index of the largest number in the array
+ */
+public static int max (int [] x)
+{
+	int max = 0;  
+
+	for (int i = 1; i < x.length; i++) { 
+		if (x[i] > x[max]) { 
+			max = i; 
+		}
+	}
+
+	return max;
+
+}
+/**
+ * Returns the index of where the largest number in the array is located
+ * @param x The array of numbers 
+ * @return The index of the largest number in the array
+ */
+public static int max (double [] x)
+{
+	int max = 0; 
+
+    for (int i = 1; i < x.length; i++) {
+        if (x[i] > x[max]) {
+            max = i; 
+        }
+    }
+
+    return max;
+
+}
+/**
+ * Returns the difference between the largest and smallest numbers in the array
+ * @param x The array of numbers 
+ * @return The difference between the largest and smallest numbers of x
+ */
+public static int bigDifference (int [] x)
+{
+	int max = x[0];  
+	int min = x[0];  
+
+	for (int i = 1; i < x.length; i++) { 
+		if (x[i] > max) {
+			max = x[i]; 
+		}
+		if (x[i] < min) {
+			min = x[i]; 
+		}
+	}
+
+	int bigDifference = max - min;
+
+	return bigDifference; 
+
+}
+/**
+ * Returns the difference between the largest and smallest numbers in the array
+ * @param x The array of numbers 
+ * @return The difference between the largest and smallest numbers of x
+ */
+public static int bigDifference (double [] x)
+{
+	double max = x[0];  
+	double min = x[0];  
+
+	for (int i = 1; i < x.length; i++) { 
+		if (x[i] > max) {
+			max = x[i]; 
+		}
+		if (x[i] < min) {
+			min = x[i]; 
 		}
 
-		return min;
-
-
 	}
-	/**
-	 * Returns the index of where the largest number in the array is located
-	 * @param x The array of numbers 
-	 * @return The index of the largest number in the array
-	 */
-	public static int max (int [] x)
-	{
-		int max = 0;  
 
-		for (int i = 1; i < x.length; i++) { 
-			if (x[i] > x[max]) { 
-				max = i; 
-			}
+	int bigDifference = (int) (max - min);
+
+	return bigDifference;
+
+}
+/**
+ * Returns an array of all the factors of the given number
+ * @param x The number to calculate the factors for
+ * @return An array of factors of x
+ */
+public static int [] factors (int x)
+{
+	//Calculating the number of factors the variable has 
+	int numOfFactors = 0;
+	for (int i = 1; i <= x; i++) {
+		if (x % i == 0) {
+			numOfFactors++;
+		}
+	}
+
+	//Creating array to store the variables 
+	int[] factors = new int[numOfFactors];
+	int index = 0;
+
+
+	for (int i = 1; i <= x; i++) {
+		if (x % i == 0) {
+			factors[index] = i;
+			index++;
+		}
+	}
+
+	return factors;
+}
+/**
+ * Returns the average of all the numbers in the array
+ * @param x The array of numbers 
+ * @return The average of x
+ */
+public static double mean (double [] x)
+{
+	double sum = 0; 
+	for (int i = 0; i < x.length; i++) {
+		sum += x[i]; 
+	}
+	double mean = sum/x.length;
+
+	return mean;
+}
+/**
+ * Returns the median of all the numbers in the array
+ * @param x The array of numbers 
+ * @return The median of x
+ */
+public static double median (double [] x)
+{
+	//Sorting the array in ascending numerical value 
+	Arrays.sort(x);
+	//Declaring variables 
+	int length = x.length;
+	int mid = x.length / 2;
+	double median;
+	//Calculating median if number is even
+	if (length%2==0) {
+		median = (x[mid - 1] + x[mid]) / 2.0; 
+		//Calculating median if number is odd
+	} else {
+		median = x[mid]; 
+	}
+
+	return median; 
+}
+/**
+ * Returns the mode of all the numbers in the array
+ * @param x The array of numbers 
+ * @return The mode of x
+ */
+public static double mode (double [] x)
+{
+	//Sorting the array in ascending numerical value   
+	Arrays.sort(x);
+
+	//Declaring variables 
+	double mode = x[0];
+	int maxCount = 1;      
+	int currentNum = 1; 
+
+	//Counting number occurrences 
+	for (int i = 1; i < x.length; i++) {
+		if (x[i] == x[i - 1]) {
+			currentNum++; //Incrementing count for repeated numbers
+		} else {
+			currentNum = 1; //Reseting count for different number
 		}
 
-		return max;
 
-	}
-	/**
-	 * Returns the index of where the largest number in the array is located
-	 * @param x The array of numbers 
-	 * @return The index of the largest number in the array
-	 */
-	public static int max (double [] x)
-	{
-		int max = 0;  
-
-		for (int i = 1; i < x.length; i++) { 
-			if (x[(int) i] > x[(int) max]) { 
-				max = i; 
-			}
+		if (currentNum > maxCount) {
+			maxCount = currentNum;
+			mode = x[i]; 
 		}
-
-		return max;
-
 	}
-	/**
-	 * Returns the difference between the largest and smallest numbers in the array
-	 * @param x The array of numbers 
-	 * @return The difference between 
-	 */
-	public static int bigDifference (int [] x)
-	{
-		int max = x[0];  
-		int min = x[0];  
 
-		for (int i = 1; i < x.length; i++) { 
-			if (x[i] > max) {
-				max = x[i]; 
-			}
-			if (x[i] < min) {
-				min = x[i]; 
-			}
-		}
+	return mode;
+}
 
-		int bigDifference = max - min;
-
-		return bigDifference; 
-
-	}
-	/**
-	 * Returns the difference between the largest and smallest numbers in the array
-	 * @param x The array of numbers 
-	 * @return The index of the largest number in the array
-	 */
-	public static int bigDifference (double [] x)
-	{
-		double max = x[0];  
-		double min = x[0];  
-
-		for (int i = 1; i < x.length; i++) { 
-			if (x[i] > max) {
-				max = x[i]; 
-			}
-			if (x[i] < min) {
-				min = x[i]; 
-			}
-
-		}
-
-		int bigDifference = (int) (max - min);
-
-		return bigDifference;
-
-	}
-	/**
-	 * Returns an array of all the factors of the given number
-	 * @param x The array of numbers 
-	 * @return The factors of x
-	 */
-	public static int [] factors (int x)
-	{
-		//Calculating the number of factors the variable has 
-		int numOfFactors = 0;
-		for (int i = 1; i <= x; i++) {
-			if (x % i == 0) {
-				numOfFactors++;
-			}
-		}
-
-		//Creating array to store the variables 
-		int[] factors = new int[numOfFactors];
-		int index = 0;
-
-
-		for (int i = 1; i <= x; i++) {
-			if (x % i == 0) {
-				factors[index] = i;
-				index++;
-			}
-		}
-
-		return factors;
-	}
-	/**
-	 * Returns the average of all the numbers in the array
-	 * @param x The array of numbers 
-	 * @return The average of x
-	 */
-	public static double mean (double [] x)
-	{
-	    double sum = 0; 
-	    for (int i = 0; i < x.length; i++) {
-	        sum += x[i]; 
-	    }
-	    double mean = sum/x.length;
-
-		return mean;
-	}
 }
 
 
