@@ -42,14 +42,15 @@ public class Summative {
         }
 
         // Set prices for room types
-        System.out.println("Enter the price per night for Single rooms:");
+        System.out.print("Enter the price per night for Single rooms: $");
         double singlePrice = sc.nextDouble();
-        System.out.println("Enter the price per night for Double rooms:");
+        System.out.print("Enter the price per night for Double rooms: $");
         double doublePrice = sc.nextDouble();
-        System.out.println("Enter the price per night for Suite rooms:");
+        System.out.print("Enter the price per night for Suite rooms: $");
         double suitePrice = sc.nextDouble();
         sc.nextLine(); 
 
+        //fix this 
         double[] prices = {singlePrice, doublePrice, suitePrice};
 
         // Initialize 
@@ -147,7 +148,6 @@ public class Summative {
                                 double[] floorRoomPrices, double[] additionalCharges, int roomsPerFloor) {
         System.out.println("Please enter the room number (1 - " + availability.length + "):");
         int roomNumber = sc.nextInt() - 1;
-        sc.nextLine();
 
         if (roomNumber < 0 || roomNumber >= availability.length) {
             System.out.println("Invalid room number!");
@@ -258,15 +258,16 @@ public class Summative {
             System.out.println("Room " + roomNumber + " is not currently occupied.");
             return;
         }
-
-        // Calculate and print the bill
+        
+        //Calculate and print bill
         double totalBill = (roomRate * stayDuration) + additionalCharge;
-        System.out.println("\n--- Bill for Room " + roomNumber + " ---");
-        System.out.println("Floor: " + (floor + 1));
-        System.out.println("Room Rate (per night): $" + roomRate);
-        System.out.println("Stay Duration: " + stayDuration + " nights");
-        System.out.println("Additional Charges: $" + additionalCharge);
-        System.out.println("Total Bill: $" + totalBill);
-        System.out.println("-----------------------------");
+        System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~Bill for Room" + roomNumber + "~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
+		System.out.println("|-------------------------------------------------------------------------|");
+		System.out.printf("%-15s%-15s%-15s%-15s%-15s", "|Floor", "|Room Rate", "|Stay Duration","|Additional Charges", "|");
+		System.out.println("\n|-------------------------------------------------------------------------|");
+		System.out.printf("%-1s%-12s%-3s%-9s%-1s%-12s%-3s%-9s%-1s", "|", floor, "| $", roomRate, "| ", stayDuration, "| $", additionalCharge, "|");
+		System.out.println("\n|--------------------------------------------------------------------------|");
+        System.out.printf("%-15s%-15s%1s, |Total Bill: $", totalBill,"|");
+        System.out.println("---------------------------------------------------------------------------");
     }
 }
