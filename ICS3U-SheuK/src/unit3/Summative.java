@@ -5,12 +5,13 @@ package unit3;
  * @author Kate Sheu
  */
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Summative {
 
     public static void main(String[] args) {
-    	//Introduction
-    	System.out.println("Welcome to Kate's Hotel Management System!");
+        // Introduction
+        System.out.println("Welcome to Kate's Hotel Management System!");
         System.out.println("This program will allow you to manage the charges, availability, and prices of hotel rooms.");
 
         Scanner sc = new Scanner(System.in);
@@ -21,11 +22,11 @@ public class Summative {
 
         System.out.println("Please enter the number of rooms on each floor:");
         int roomsPerFloor = sc.nextInt();
-        sc.nextLine(); 
+        sc.nextLine();
 
-        // Room type and price setup for each floor
+        // Room type setup for each floor
         String[] floorRoomTypes = new String[numOfFloors];
-        double[] floorRoomPrices = new double[numOfFloors];
+        
 
         for (int i = 0; i < numOfFloors; i++) {
             System.out.println("Enter the type of rooms on floor " + (i + 1) + " (Single, Double, Suite):");
@@ -42,18 +43,23 @@ public class Summative {
         }
 
         // Set prices for room types
+        DecimalFormat price = new DecimalFormat("0.00");
+
         System.out.print("Enter the price per night for Single rooms: $");
         double singlePrice = sc.nextDouble();
+        System.out.println("Single room price set to: $" + price.format(singlePrice));
+
         System.out.print("Enter the price per night for Double rooms: $");
         double doublePrice = sc.nextDouble();
+        System.out.println("Double room price set to: $" + price.format(doublePrice));
+
         System.out.print("Enter the price per night for Suite rooms: $");
         double suitePrice = sc.nextDouble();
-        sc.nextLine(); 
-
-        //fix this 
+        System.out.println("Suite room price set to: $" + price.format(suitePrice));
+        sc.nextLine();
         double[] prices = {singlePrice, doublePrice, suitePrice};
 
-        // Initialize 
+        // Initialize room data
         int totalRooms = numOfFloors * roomsPerFloor;
         boolean[] availability = new boolean[totalRooms];
         String[] guestNames = new String[totalRooms];
@@ -81,34 +87,28 @@ public class Summative {
             if (command.equals("#")) {
                 System.out.println("R - Reserves/checks in a room\nO - Checks out a room\nF - Finds room details using last name");
                 System.out.println("L - List of all rooms in hotel and availability\nA - Add additional charges to a room");
-                System.out.println("P - Print bill for a room\n# - Display commands");
-            } else if (command.equals("R")) {
+                System.out.println("P - Print bill for a room\n# - Display commands\nQ - Quit program");
+            } else if (command.equalsIgnoreCase("R")) {
                 checkIn(sc, availability, guestNames, stayDurations);
-            } else if (command.equals("O")) {
-                checkOut(sc, availability, guestNames, stayDurations, floorRoomPrices, additionalCharges, roomsPerFloor);
-            } else if (command.equals("F")) {
+            } else if (command.equalsIgnoreCase("O")) {
+                checkOut(sc, availability, guestNames, stayDurations, prices, additionalCharges, roomsPerFloor);
+            } else if (command.equalsIgnoreCase("F")) {
                 findRoomByGuest(sc, guestNames);
-            } else if (command.equals("L")) {
+            } else if (command.equalsIgnoreCase("L")) {
                 listRooms(availability, guestNames, floorRoomTypes, roomsPerFloor);
-            } else if (command.equals("A")) {
+            } else if (command.equalsIgnoreCase("A")) {
                 addAdditionalCharges(sc, additionalCharges);
-            } else if (command.equals("P")) {
-                printBill(sc, stayDurations, floorRoomPrices, additionalCharges, roomsPerFloor);
-            } else if (command.equals("Q")) {
+            } else if (command.equalsIgnoreCase("P")) {
+                printBill(sc, stayDurations, prices, additionalCharges, roomsPerFloor);
+            } else if (command.equalsIgnoreCase("Q")) {
                 System.out.println("Thanks for using Kate's Hotel Management System!");
-                break; // Exit the loop
+                break;
             } else {
                 System.out.println("Invalid command. Please try again.");
             }
         }
     }
-    /**
-     * Checks users into a hotel room and stores room number, guest's last name, and duration of stay.
-     * @param sc Scanner object for user input
-     * @param availability Array indicating whether rooms are available (true) or occupied (false)
-     * @param guestNames Array storing the names of the guests in each room
-     * @param stayDurations Array storing the duration of stay (in days) for each room
-     */
+
     public static void checkIn(Scanner sc, boolean[] availability, String[] guestNames, int[] stayDurations) {
         System.out.println("Please enter the room number (1 - " + availability.length + "):");
         int roomNumber = sc.nextInt() - 1;
@@ -133,28 +133,19 @@ public class Summative {
             System.out.println("Guest " + guestName + " has been checked into room " + (roomNumber + 1) + ".");
         }
     }
-   
-    /**
-     * Checks a guest out of a hotel room, calculates and prints the bill, and resets room data.
-     * @param sc Scanner object for user input
-     * @param availability Array indicating whether rooms are available (true) or occupied (false)
-     * @param guestNames Array storing the names of the guests in each room
-     * @param stayDurations Array storing the duration of stay (in days) for each room
-     * @param floorRoomPrices Array storing room prices per floor
-     * @param additionalCharges Array storing additional charges for each room
-     * @param roomsPerFloor Number of rooms on each floor
-     */
+
     public static void checkOut(Scanner sc, boolean[] availability, String[] guestNames, int[] stayDurations,
-                                double[] floorRoomPrices, double[] additionalCharges, int roomsPerFloor) {
+                                 double[] prices, double[] additionalCharges, int roomsPerFloor) {
         System.out.println("Please enter the room number (1 - " + availability.length + "):");
         int roomNumber = sc.nextInt() - 1;
+        sc.nextLine();
 
         if (roomNumber < 0 || roomNumber >= availability.length) {
             System.out.println("Invalid room number!");
         } else if (availability[roomNumber]) {
             System.out.println("Room is already empty!");
         } else {
-            printBill(sc, stayDurations, floorRoomPrices, additionalCharges, roomsPerFloor);
+            printBillForRoom(roomNumber, stayDurations, prices, additionalCharges, roomsPerFloor);
             availability[roomNumber] = true;
             guestNames[roomNumber] = "";
             stayDurations[roomNumber] = 0;
@@ -164,11 +155,6 @@ public class Summative {
         }
     }
 
-    /**
-     * Finds and displays the room number occupied by a guest with a specified last name.
-     * @param sc Scanner object for user input
-     * @param guestNames Array storing the names of the guests in each room
-     */
     public static void findRoomByGuest(Scanner sc, String[] guestNames) {
         System.out.println("Please enter the guest's last name:");
         String guestName = sc.nextLine();
@@ -186,13 +172,6 @@ public class Summative {
         }
     }
 
-    /**
-     * Lists all rooms in the hotel, their type, and availability status.
-     * @param availability Array indicating whether rooms are available (true) or occupied (false)
-     * @param guestNames Array storing the names of the guests in each room
-     * @param floorRoomTypes Array storing room types for each floor (e.g., Single, Double, Suite)
-     * @param roomsPerFloor Number of rooms on each floor
-     */
     public static void listRooms(boolean[] availability, String[] guestNames, String[] floorRoomTypes, int roomsPerFloor) {
         for (int i = 0; i < availability.length; i++) {
             int floor = i / roomsPerFloor;
@@ -202,11 +181,6 @@ public class Summative {
         }
     }
 
-    /**
-     * Adds additional charges to a specified room.
-     * @param sc Scanner object for user input
-     * @param additionalCharges Array storing additional charges for each room
-     */
     public static void addAdditionalCharges(Scanner sc, double[] additionalCharges) {
         System.out.println("Please enter the room number (1 - " + additionalCharges.length + "):");
         int roomNumber = sc.nextInt() - 1;
@@ -224,50 +198,39 @@ public class Summative {
         }
     }
 
-    /**
-     * Calculates and prints the total bill for a specified room based on the stay duration,
-     * room rate, and any additional charges.
-     * @param sc Scanner object for user input
-     * @param stayDurations Array storing the duration of stay (in days) for each room
-     * @param floorRoomPrices Array storing room prices per floor
-     * @param additionalCharges Array storing additional charges for each room
-     * @param roomsPerFloor Number of rooms on each floor
-     */
-    public static void printBill(Scanner sc, int[] stayDurations, double[] floorRoomPrices, double[] additionalCharges, int roomsPerFloor) {
-        int totalRooms = floorRoomPrices.length * roomsPerFloor; // Calculate total rooms once
+    public static void printBill(Scanner sc, int[] stayDurations, double[] prices, double[] additionalCharges, int roomsPerFloor) {
+        System.out.println("Please enter the room number (1 - " + stayDurations.length + "):");
+        int roomNumber = sc.nextInt() - 1;
+        sc.nextLine();
 
-        System.out.println("Please enter the room number (1 - " + totalRooms + "):");
-        int roomNumber = sc.nextInt(); // No -1 here; assume user inputs 1-based room numbers
-        sc.nextLine(); // Consume newline
-
-        // Validate room number based on totalRooms
-        if (roomNumber < 1 || roomNumber > totalRooms) {
-            System.out.println("Invalid room number");
+        if (roomNumber < 0 || roomNumber >= stayDurations.length) {
+            System.out.println("This room is not occupied!");
             return;
         }
 
-        int roomIndex = roomNumber - 1;
+        printBillForRoom(roomNumber, stayDurations, prices, additionalCharges, roomsPerFloor);
+    }
 
-        int floor = roomIndex / roomsPerFloor;
-        double roomRate = floorRoomPrices[floor];
+    public static void printBillForRoom(int roomIndex, int[] stayDurations, double[] floorRoomPrices, double[] additionalCharges, int roomsPerFloor) {
+        int floor = roomIndex / roomsPerFloor; 
+        double roomRate = floorRoomPrices[floor]; 
         double additionalCharge = additionalCharges[roomIndex];
         int stayDuration = stayDurations[roomIndex];
 
-        // Check if the room is occupied
         if (stayDuration <= 0) {
-            System.out.println("Room " + roomNumber + " is not currently occupied.");
+            System.out.println("Room " + (roomIndex + 1) + " is not currently occupied.");
             return;
         }
-        
-        //Calculate and print bill
+
         double totalBill = (roomRate * stayDuration) + additionalCharge;
-        System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~~Bill for Room" + roomNumber + "~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
-		System.out.println("|-------------------------------------------------------------------------|");
-		System.out.printf("%-15s%-15s%-15s%-15s%-15s", "|Floor", "|Room Rate", "|Stay Duration","|Additional Charges", "|");
-		System.out.println("\n|-------------------------------------------------------------------------|");
-		System.out.printf("%-1s%-12s%-3s%-9s%-1s%-12s%-3s%-9s%-1s", "|", floor, "| $", roomRate, "| ", stayDuration, "| $", additionalCharge, "|");
-		System.out.println("\n|--------------------------------------------------------------------------|");
-        System.out.printf("%-15s%-15s%1s, |Total Bill: $", totalBill,"|");
-        System.out.println("---------------------------------------------------------------------------");
+
+        System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~Bill for Room " + (roomIndex + 1) + "~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
+        System.out.println("|---------------------------------------------------------------------|");
+        System.out.printf("%-15s%-15s%-20s%-20s%-15s\n", "|Floor", "|Room Rate", "|Stay Duration", "|Additional Charges", "|");
+        System.out.println("|---------------------------------------------------------------------|");
+        System.out.printf("%-15s%-15s%-20s%-20s%-15s", "|" + floor + 1, "| $" + roomRate, "|" + stayDuration, "| $" + additionalCharge, "|");
+        System.out.println("\n|---------------------------------------------------------------------|");
+        System.out.printf("%-55s%-15.2f%-15s\n", "|Total Bill: $", totalBill, "|");
+        System.out.println("+---------------------------------------------------------------------+");
     }
 }
