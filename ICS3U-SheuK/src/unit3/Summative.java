@@ -215,7 +215,12 @@ public class Summative {
 		for (int i = 0; i < availability.length; i++) {
 			int floor = i / roomsPerFloor;
 			String roomType = floorRoomTypes[floor];
-			String status = availability[i] ? "Available" : "Occupied by " + guestNames[i];
+			String status;
+			if (availability[i]) {
+			    status = "Available";
+			} else {
+			    status = "Occupied by " + guestNames[i];
+			}
 			System.out.println("Room " + (i + 1) + " (Type: " + roomType + "): " + status);
 		}
 	}
