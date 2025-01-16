@@ -299,7 +299,7 @@ public class Summative {
 
 		double totalBill = (roomRate * stayDuration) + additionalCharge;
 
-		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~Bill for Room " + (roomIndex + 1) + "~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
+		System.out.println("+~~~~~~~~~~~~~~~~~~~~~~~~~~Bill for Room " + (roomIndex + 1) + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
 		System.out.println("|---------------------------------------------------------------------|");
 		System.out.printf("%-15s%-15s%-20s%-20s%-15s\n", "|Floor", "|Room Rate", "|Stay Duration", "|Additional Charges", "|");
 		System.out.println("|---------------------------------------------------------------------|");
